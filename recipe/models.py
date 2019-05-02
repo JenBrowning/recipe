@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class Author(models.Model):
     name = models.CharField(max_length=50)
-    bio = models.TextField(default='')
+    bio = models.TextField()
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -20,7 +20,7 @@ class Recipes(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     description = models.CharField(max_length=1000)
     time_required = models.CharField(max_length=50)
-    instructions = models.TextField(default='')
+    instructions = models.TextField()
 
     def __str__(self):
         return self.title

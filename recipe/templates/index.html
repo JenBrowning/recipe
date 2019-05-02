@@ -1,5 +1,15 @@
-<h1>Recipes</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Recipes</title>
+</head>
 
-{% for recipe in recipes %}
-    {% include 'recipe.html' with recipe=recipe %}
-{% endfor %}
+<h1>Click below for Recipe</h1>
+<body>
+    {% for rec in recipes %}
+    <li><a href="recipes/{{ rec.id }}">{{ rec.title }}</a></li>
+    {% endfor %}
+
+</body>
+
+</html>
